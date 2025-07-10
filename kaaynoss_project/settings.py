@@ -14,7 +14,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 SECRET_KEY = 'django-insecure--t$jy%!r$)&hzl!5i5r-2d2146hl$o$we0z51b3970j!@-lty9'
 DEBUG = False  # 🔒 IMPORTANT pour la production
 
-ALLOWED_HOSTS = ['soramalick.pythonanywhere.com']  # ✅ Remplace par ton nom d’utilisateur
+ALLOWED_HOSTS = ['kaaynoss01.onrender.com', 'localhost', '127.0.0.1']
+ # ✅ Remplace par ton nom d’utilisateur
 
 # === APPLICATIONS INSTALLÉES ===
 INSTALLED_APPS = [
