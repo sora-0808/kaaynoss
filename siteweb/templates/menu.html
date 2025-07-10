@@ -1,0 +1,211 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu - KaayNoss</title>
+  <link rel="stylesheet" href="{% static 'siteweb/style.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <!-- HEADER -->
+  <header class="menu-header">
+    <div class="logo1" style="display: flex; align-items: center; gap: 10px;">
+      <a href="{% url 'accueil' %}"><div class="k">KN</div></a>
+      <a href="{% url 'accueil' %}" class="logo"><span>Kaay</span>Noss</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+      <div></div><div></div><div></div>
+    </div>
+    <ul class="navbar" id="navbar">
+      <li><a href="{% url 'accueil' %}">Accueil</a></li>
+      <li><a href="{% url 'menu' %}">Menu</a></li>
+      <li><a href="{% url 'chefs' %}">Nos chefs</a></li>
+      <li><a href="{% url 'avis' %}">Avis</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+      <li><a href="{% url 'apropos' %}">À propos</a></li>
+      <li><a href="{% url 'login' %}" class="btn-connect">Inscription</a></li>
+    </ul>
+  </header>
+
+  <!-- BANNIÈRE -->
+  <section class="menu-banner">
+    <div class="banner-content">
+      <h1>Notre Menu</h1>
+      <p style="color:white; font-weight:bold;">Savourez l’authenticité sénégalaise dans chaque plat !</p>
+      <p>Découvrez notre sélection de plats traditionnels et modernes inspirés du Sénégal.</p>
+    </div>
+  </section>
+
+  <!-- SECTIONS DE PLATS -->
+  <section class="menu-items" id="menu-items">
+    <!-- Ndékki -->
+    <div class="menu-category">
+      <h2 class="titre-text"><span>N</span>dékki</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/ai-generated-7976795_640.jpg' %}" alt="Burger classique">
+          <div class="menu-item-details">
+            <h3>Burger classique</h3>
+            <p>Un burger savoureux avec un steak juteux, fromage fondant et légumes frais.</p>
+            <span class="price">5000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/hamburger-9050530_640.png' %}" alt="Double Cheese Burger">
+          <div class="menu-item-details">
+            <h3>Double Cheese Burger</h3>
+            <p>Deux steaks, double fromage et une explosion de saveurs.</p>
+            <span class="price">6000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/cheese-burger-7323674_640.jpg' %}" alt="Chicken Burger">
+          <div class="menu-item-details">
+            <h3>Chicken Burger</h3>
+            <p>Poulet croustillant, sauce spéciale et légumes frais.</p>
+            <span class="price">5000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Plats -->
+    <div class="menu-category">
+      <h2 class="titre-text"><span>P</span>lates</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/img_0913-1.webp' %}" alt="Thieboudienne">
+          <div class="menu-item-details">
+            <h3>Thieboudienne</h3>
+            <p>Le plat national sénégalais : riz parfumé, poisson, légumes variés et épices traditionnelles.</p>
+            <span class="price">5000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/pouletyassa.webp' %}" alt="Yassa">
+          <div class="menu-item-details">
+            <h3>Yassa</h3>
+            <p>Poisson mariné, oignons fondants, citron, épices. Servi avec du riz.</p>
+            <span class="price">4000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/mafe.jpg' %}" alt="Mafé">
+          <div class="menu-item-details">
+            <h3>Mafé</h3>
+            <p>Viande ou poisson mijoté, sauce arachide onctueuse, légumes.</p>
+            <span class="price">5000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Desserts -->
+    <div class="menu-category">
+      <h2 class="titre-text"><span>D</span>esserts</h2>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/signature-dishes-banner-1024x483-min.jpg' %}" alt="Crème brûlée">
+          <div class="menu-item-details">
+            <h3>Crème brûlée</h3>
+            <p>Un dessert classique avec une couche de caramel croquant.</p>
+            <span class="price">2000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/fruit-cake-6879425_640.jpg' %}" alt="Tarte aux fruits">
+          <div class="menu-item-details">
+            <h3>Tarte aux fruits</h3>
+            <p>Une tarte légère garnie de fruits frais de saison.</p>
+            <span class="price">11000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+        <div class="menu-item">
+          <img src="{% static 'siteweb/images/sweets-4367937_640.jpg' %}" alt="Brownie au chocolat">
+          <div class="menu-item-details">
+            <h3>Brownie au chocolat</h3>
+            <p>Un brownie fondant avec une touche de noix.</p>
+            <span class="price">4000fcfa</span>
+            <a href="{% url 'commande' %}"><button class="btn-order">Commander</button></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERIE -->
+  <section class="menu-gallery">
+    <div class="titre">
+      <h2 class="titre-text1"><span style="color: #FFA673;">G</span>alerie de nos plats</h2>
+      <p>Découvrez nos plats en images pour vous inspirer.</p>
+    </div>
+    <div class="image-gallery">
+      <div class="image-frame"><img src="{% static 'siteweb/images/signature-dishes-banner-1024x483-min.jpg' %}" alt="Image 1"></div>
+      <div class="image-frame"><img src="{% static 'siteweb/images/Recette-de-Yassa-au-poulet-800x530.jpg' %}" alt="Image 2"></div>
+      <div class="image-frame"><img src="{% static 'siteweb/images/routi.jpg' %}" alt="Image 3"></div>
+      <div class="image-frame"><img src="{% static 'siteweb/images/bg-item3-min.jpg' %}" alt="Image 4"></div>
+      <div class="image-frame"><img src="{% static 'siteweb/images/yappeu.jpg' %}" alt="Image 5"></div>
+    </div>
+  </section>
+
+  <!-- JS -->
+  <script src="{% static 'siteweb/main.js' %}"></script>
+
+  <!-- FOOTER -->
+    <!-- ✅ FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-block">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><i class="fas fa-utensils"></i> Réservation de table</li>
+                    <li><i class="fas fa-motorcycle"></i> Livraison à domicile</li>
+                    <li><i class="fas fa-calendar-alt"></i> Organisation d'événements</li>
+                    <li><i class="fas fa-concierge-bell"></i> Menu personnalisé</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Restons en contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:contact@resto.com">contact@resto.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Almadies, Dakar, Sénégal</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Les horaires</h3>
+                <p>Lundi - Vendredi : 12h - 22h</p>
+                <p>Samedi : 12h - 23h</p>
+                <p>Dimanche : 12h - 21h</p>
+            </div>
+            <div class="footer-block">
+                <h3>Nos réseaux</h3>
+                <ul class="social-icons" style="display:flex; flex-direction:column; gap:12px; align-items:center; padding-top:10px;">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <p style="font-family: 'Roboto', sans-serif;">&copy; 2025 KaayNoss. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ✅ SCRIPTS -->
+    <script src="{% static 'siteweb/main.js' %}"></script>
+    <script src="{% static 'siteweb/script.js' %}"></script>
+</body>
+</html>

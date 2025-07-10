@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nos chefs - KaayNoss</title>
+
+    <!-- ✅ CSS principal -->
+    <link rel="stylesheet" href="{% static 'siteweb/style.css' %}">
+    
+    <!-- ✅ Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- ✅ Style spécifique -->
+    <style>
+        .chef-image {
+            width: 180px;
+            height: 180px;
+            overflow: hidden;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #fff;
+        }
+        .chef-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    </style>
+</head>
+<body class="chefs-page" style="background-image: url('{% static 'siteweb/images/chefs-background.jpg' %}'); background-size: cover; background-position: center;">
+    
+    <!-- ✅ HEADER -->
+    <header class="chefs-header">
+        <div class="logo1" style="display: flex; align-items: center; gap: 10px;">
+            <a href="{% url 'accueil' %}"><div class="k">KN</div></a>
+            <a href="{% url 'accueil' %}" class="logo"><span>Kaay</span>Noss</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div><div></div><div></div>
+        </div>
+        <ul class="navbar" id="navbar">
+            <li><a href="{% url 'accueil' %}">Accueil</a></li>
+            <li><a href="{% url 'menu' %}">Menu</a></li>
+            <li><a href="{% url 'chefs' %}">Nos chefs</a></li>
+            <li><a href="{% url 'avis' %}">Avis</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'apropos' %}">À propos</a></li>
+            <li><a href="{% url 'login' %}" class="btn-connect">Inscription</a></li>
+        </ul>
+    </header>
+
+    <!-- ✅ BANNIÈRE -->
+    <section class="chefs-banner">
+        <div class="banner-content">
+            <h1>Rencontrez nos chefs</h1>
+            <p style="color:white; font-weight:bold;">Une brigade fière de représenter la gastronomie sénégalaise.</p>
+            <p>Découvrez les artistes culinaires derrière nos créations gastronomiques.</p>
+        </div>
+    </section>
+
+    <!-- ✅ GALERIE DE CHEFS -->
+    <section class="chefs-gallery">
+        <div class="titre">
+            <h2 class="titre-text"><span class="soo" style="color: white;">Nos chefs</span></h2>
+            <p>Chaque chef apporte une touche unique à nos plats, combinant passion et expertise.</p>
+        </div>
+        <div class="chefs-grid">
+            <div class="chef-card">
+                <div class="chef-image">
+                    <img src="{% static 'siteweb/images/chef.jpg' %}" alt="Chef Faye">
+                </div>
+                <div class="chef-details">
+                    <h3>Chef Faye</h3>
+                    <p>Spécialiste des grillades et des saveurs authentiques.</p>
+                </div>
+            </div>
+            <div class="chef-card">
+                <div class="chef-image">
+                    <img src="{% static 'siteweb/images/chef-4625935_1280.jpg' %}" alt="Chef Lamine">
+                </div>
+                <div class="chef-details">
+                    <h3>Chef Lamine</h3>
+                    <p>Maître des desserts raffinés et des pâtisseries exquises.</p>
+                </div>
+            </div>
+            <div class="chef-card">
+                <div class="chef-image">
+                    <img src="{% static 'siteweb/images/istockphoto-886640128-612x612.jpg' %}" alt="Chef Doudou">
+                </div>
+                <div class="chef-details">
+                    <h3>Chef Doudou</h3>
+                    <p>Expert en cuisine fusion, mélangeant les cultures et les saveurs.</p>
+                </div>
+            </div>
+            <div class="chef-card">
+                <div class="chef-image">
+                    <img src="{% static 'siteweb/images/femme-travaillant-comme-chef-professionnel (2).jpg' %}" alt="Chef Adja">
+                </div>
+                <div class="chef-details">
+                    <h3>Chef Adja</h3>
+                    <p>Créatrice de plats végétariens innovants et équilibrés.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ JavaScript -->
+    <script src="{% static 'siteweb/main.js' %}"></script>
+
+    <!-- ✅ FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <!-- Tu peux extraire ce bloc vers partials/footer.html si tu veux -->
+            <div class="footer-block">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><i class="fas fa-utensils"></i> Réservation de table</li>
+                    <li><i class="fas fa-motorcycle"></i> Livraison à domicile</li>
+                    <li><i class="fas fa-calendar-alt"></i> Organisation d'événements</li>
+                    <li><i class="fas fa-concierge-bell"></i> Menu personnalisé</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Restons en contact</h3>
+                <p><i class="fas fa-envelope"></i> Email : contact@resto.com</p>
+                <p><i class="fas fa-phone"></i> Téléphone : +33 1 23 45 67 89</p>
+                <p><i class="fas fa-map-marker-alt"></i> Adresse : Almadies, Dakar, Sénégal</p>
+            </div>
+            <div class="footer-block">
+                <h3>Les horaires</h3>
+                <p><i class="fas fa-clock"></i> Lundi - Vendredi : 12h - 22h</p>
+                <p><i class="fas fa-clock"></i> Samedi : 12h - 23h</p>
+                <p><i class="fas fa-clock"></i> Dimanche : 12h - 21h</p>
+            </div>
+            <div class="footer-block">
+                <h3>Nos réseaux</h3>
+                <ul class="social-icons" style="display:flex; flex-direction:column; gap:12px; align-items:center; padding-top:10px;">
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-facebook fa-lg"></i> Facebook</a></li>
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-instagram fa-lg"></i> Instagram</a></li>
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-snapchat fa-lg"></i> Snapchat</a></li>
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-whatsapp fa-lg"></i> WhatsApp</a></li>
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-tiktok fa-lg"></i> TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <p style="color: #000; font-family: 'Roboto', sans-serif;">
+                &copy; 2025 KaayNoss. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
+

@@ -1,0 +1,149 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Réserver - KaayNoss</title>
+
+    <!-- ✅ CSS principal -->
+    <link rel="stylesheet" href="{% static 'siteweb/style.css' %}">
+
+    <!-- ✅ Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+
+    <!-- ✅ BANNIÈRE -->
+    <section class="reservation-banner">
+        <img src="{% static 'siteweb/images/hp-our-speciality-banner.jpg' %}" alt="Image de fond">
+        <div class="banner-text">
+            <h1><span>R</span>éservation de table</h1>
+            <p style="color:white; font-weight:bold;">Réservez une table et vivez la Teranga sénégalaise !</p>
+            <p>Planifiez votre visite et profitez d'une expérience culinaire exceptionnelle.</p>
+        </div>
+    </section>
+
+    <!-- ✅ HEADER -->
+    <header class="reservation-header">
+        <div class="logo1" style="display: flex; align-items: center; gap: 10px;">
+            <a href="{% url 'accueil' %}"><div class="k">KN</div></a>
+            <a href="{% url 'accueil' %}" class="logo"><span>Kaay</span>Noss</a>
+        </div>
+        <div class="hamburger" id="hamburger"><div></div><div></div><div></div></div>
+        <ul class="navbar" id="navbar">
+            <li><a href="{% url 'accueil' %}">Accueil</a></li>
+            <li><a href="{% url 'menu' %}">Menu</a></li>
+            <li><a href="{% url 'chefs' %}">Nos chefs</a></li>
+            <li><a href="{% url 'avis' %}">Avis</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'apropos' %}">À propos</a></li>
+            <li><a href="{% url 'login' %}" class="btn-connect">Inscription</a></li>
+        </ul>
+    </header>
+
+    <!-- ✅ FORMULAIRE -->
+    <section class="reservation" id="reservation">
+        <div class="reservation-form">
+            <h3>Réserver une table</h3>
+            <form method="POST" action="{% url 'reserver' %}">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="name">Nom complet</label>
+                    <input type="text" id="name" name="Nom" placeholder="Votre nom" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="Email" placeholder="Votre email" required>
+                </div>
+                <div class="input-group">
+                    <label for="phone">Téléphone</label>
+                    <input type="tel" id="phone" name="Téléphone" placeholder="Votre numéro de téléphone" required>
+                </div>
+                <div class="input-group">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" name="Date" required>
+                </div>
+                <div class="input-group">
+                    <label for="time">Heure</label>
+                    <input type="time" id="time" name="Heure" required>
+                </div>
+                <div class="input-group">
+                    <label for="guests">Nombre de personnes</label>
+                    <input type="number" id="guests" name="Nombre_de_personnes" placeholder="Nombre de personnes" required>
+                </div>
+                <button type="submit" class="btn-reserve">Réserver</button>
+            </form>
+        </div>
+
+        <!-- ✅ NOTRE PERSONNEL -->
+        <section class="staff-details">
+            <h2><span>N</span>otre personnel</h2>
+            <div class="staff-list">
+                <div class="staff-member">
+                    <img src="{% static 'siteweb/images/freepik__the-style-is-candid-image-photography-with-natural__25870.jpeg' %}" alt="Chef de salle">
+                    <h3>Chef de salle</h3>
+                    <p>Responsable de l'organisation et du service.</p>
+                </div>
+                <div class="staff-member">
+                    <img src="{% static 'siteweb/images/freepik__the-style-is-candid-image-photography-with-natural__25866.png' %}" alt="Serveur">
+                    <h3>Serveur</h3>
+                    <p>À votre écoute pour répondre à vos besoins.</p>
+                </div>
+                <div class="staff-member">
+                    <img src="{% static 'siteweb/images/femme-travaillant-comme-chef-professionnel (1).jpg' %}" alt="Sommelier">
+                    <h3>Sommelier</h3>
+                    <p>Expert en vins pour accompagner vos plats.</p>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <!-- ✅ FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-block">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><i class="fas fa-utensils"></i> Réservation de table</li>
+                    <li><i class="fas fa-motorcycle"></i> Livraison à domicile</li>
+                    <li><i class="fas fa-calendar-alt"></i> Organisation d'événements</li>
+                    <li><i class="fas fa-concierge-bell"></i> Menu personnalisé</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Restons en contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:contact@resto.com">contact@resto.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Almadies, Dakar, Sénégal</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Les horaires</h3>
+                <p>Lundi - Vendredi : 12h - 22h</p>
+                <p>Samedi : 12h - 23h</p>
+                <p>Dimanche : 12h - 21h</p>
+            </div>
+            <div class="footer-block">
+                <h3>Nos réseaux</h3>
+                <ul class="social-icons" style="display:flex; flex-direction:column; gap:12px; align-items:center; padding-top:10px;">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <p style="font-family: 'Roboto', sans-serif;">&copy; 2025 KaayNoss. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ✅ SCRIPTS -->
+    <script src="{% static 'siteweb/main.js' %}"></script>
+    <script src="{% static 'siteweb/script.js' %}"></script>
+</body>
+</html>
+

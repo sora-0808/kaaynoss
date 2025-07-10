@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avis - KaayNoss</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="{% static 'siteweb/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body class="avis" style="background: url('{% static 'siteweb/images/bg-item3-min.jpg' %}') center/cover no-repeat;">
+
+    <!-- ✅ HEADER -->
+    <header class="avis-header">
+        <div class="logo1" style="display: flex; align-items: center; gap: 10px;">
+            <a href="{% url 'accueil' %}"><div class="k">KN</div></a>
+            <a href="{% url 'accueil' %}" class="logo"><span>Kaay</span>Noss</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div><div></div><div></div>
+        </div>
+        <ul class="navbar" id="navbar">
+            <li><a href="{% url 'accueil' %}">Accueil</a></li>
+            <li><a href="{% url 'menu' %}">Menu</a></li>
+            <li><a href="{% url 'chefs' %}">Nos chefs</a></li>
+            <li><a href="{% url 'avis' %}">Avis</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'apropos' %}">À propos</a></li>
+            <li><a href="{% url 'login' %}" class="btn-connect">Inscription</a></li>
+        </ul>
+    </header>
+
+    <!-- ✅ SECTION AVIS -->
+    <section class="temoignage" id="temoignage">
+        <div class="titre">
+            <h2 class="titre-text1">Ce que disent <span>Nos clients</span></h2>
+            <p style="color:white; font-weight:bold;">L’esprit Teranga au cœur de chaque expérience !</p>
+            <p style="color:white; font-weight:bold;">Ba beneen yoon ! (À la prochaine !)</p>
+            <p>Découvrez les avis de nos clients sur leur expérience chez KaayNoss.</p>
+        </div>
+        <div class="contenu">
+            {% comment %} Tu peux connecter cette section à une base de données plus tard {% endcomment %}
+            <div class="box">
+                <div class="imbox">
+                    <img src="{% static 'siteweb/images/pp.jpg' %}" alt="fatima">
+                </div>
+                <div class="text">
+                    <p class="kop">Une expérience inoubliable, des plats délicieux et un service impeccable.</p>
+                    <h3 class="vog">Fatima</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imbox">
+                    <img src="{% static 'siteweb/images/african-5497630_640.jpg' %}" alt="fatou">
+                </div>
+                <div class="text">
+                    <p class="kop">Un cadre magnifique et une cuisine raffinée.</p>
+                    <h3 class="vog">Fatou</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imbox">
+                    <img src="{% static 'siteweb/images/t4.jpg' %}" alt="barbara">
+                </div>
+                <div class="text">
+                    <p class="kop">Des saveurs uniques et une présentation soignée.</p>
+                    <h3 class="vog">Barbara</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imbox">
+                    <img src="{% static 'siteweb/images/portrait-7676482_640.jpg' %}" alt="mamadou">
+                </div>
+                <div class="text">
+                    <p class="kop">Un service exceptionnel et des plats qui ravissent les papilles.</p>
+                    <h3 class="vog">Mamadou</h3>
+                </div>
+            </div>
+            <div class="box">
+                <div class="imbox">
+                    <img src="{% static 'siteweb/images/téléchargement.png' %}" alt="omar">
+                </div>
+                <div class="text">
+                    <p class="kop">Une ambiance chaleureuse et des saveurs uniques.</p>
+                    <h3 class="vog">Omar</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ À PROPOS (bottom) -->
+    <section class="apropos" id="apropos">
+        <div class="row">
+            <div class="col50">
+                <p>Bienvenue dans notre restaurant où chaque plat est une œuvre d'art. Nous nous engageons à offrir une expérience gastronomique inoubliable.</p>
+            </div>
+            <div class="col50">
+                <div class="img">
+                    <img src="{% static 'siteweb/images/plat3.jpg' %}" alt="Image du plat">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ FOOTER -->
+    <!-- ✅ FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-block">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><i class="fas fa-utensils"></i> Réservation de table</li>
+                    <li><i class="fas fa-motorcycle"></i> Livraison à domicile</li>
+                    <li><i class="fas fa-calendar-alt"></i> Organisation d'événements</li>
+                    <li><i class="fas fa-concierge-bell"></i> Menu personnalisé</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Restons en contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:contact@resto.com">contact@resto.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+33123456789">+33 1 23 45 67 89</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Almadies, Dakar, Sénégal</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Les horaires</h3>
+                <p>Lundi - Vendredi : 12h - 22h</p>
+                <p>Samedi : 12h - 23h</p>
+                <p>Dimanche : 12h - 21h</p>
+            </div>
+            <div class="footer-block">
+                <h3>Nos réseaux</h3>
+                <ul class="social-icons" style="display:flex; flex-direction:column; gap:12px; align-items:center; padding-top:10px;">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-snapchat"></i> Snapchat</a></li>
+                    <li><a href="#"><i class="fab fa-whatsapp"></i> WhatsApp</a></li>
+                    <li><a href="#"><i class="fab fa-tiktok"></i> TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <p style="font-family: 'Roboto', sans-serif;">&copy; 2025 KaayNoss. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- ✅ SCRIPTS -->
+    <script src="{% static 'siteweb/main.js' %}"></script>
+    <script src="{% static 'siteweb/script.js' %}"></script>
+</body>
+</html>

@@ -1,0 +1,168 @@
+{% load static %}
+<!DOCTYPE html> 
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>À propos - KaayNoss</title>
+    <link rel="stylesheet" href="{% static 'siteweb/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body style="background-image: url('{% static 'siteweb/images/apropos-background.jpg' %}'); background-size: cover; background-position: center; background-attachment: fixed;">
+    
+    <header class="apropos-header">
+        <div class="logo1" style="display: flex; align-items: center; gap: 6px;">
+            <a href="{% url 'accueil' %}"><div class="k">KN</div></a>
+            <a href="{% url 'accueil' %}" class="logo"><span>Kaay</span>Noss</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="navbar" id="navbar">
+            <li><a href="{% url 'accueil' %}">Accueil</a></li>
+            <li><a href="{% url 'menu' %}">Menu</a></li>
+            <li><a href="{% url 'chefs' %}">Nos chefs</a></li>
+            <li><a href="{% url 'avis' %}">Avis</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'apropos' %}">À propos</a></li>
+            <li><a href="{% url 'login' %}" class="btn-connect">Inscription</a></li>
+        </ul>
+    </header>
+
+    <section class="apropos-banner">
+        <div class="banner-content">
+            <h1>À propos de nous</h1>
+            <p>La Teranga, c’est l’hospitalité sénégalaise : ici, chaque client est un invité d’honneur !</p>
+            <p style="margin-top:10px; color:white;">
+                Un site 100% sénégalais, inspiré par la richesse culinaire, la Teranga et la culture du Sénégal.
+            </p>
+        </div>
+    </section>
+
+    <section class="apropos-content">
+        <div class="container">
+            <h2 class="titre-text"><span>Notre</span> histoire</h2>
+            <p>
+                Depuis sa création, KaayNoss s’est imposé comme une référence de la gastronomie sénégalaise.
+Né d’un rêve familial, le restaurant incarne les valeurs de partage et de Teranga, l’hospitalité typique du Sénégal.
+Chaque plat raconte une histoire, inspirée des traditions culinaires transmises de génération en génération.
+Nous avons commencé avec une petite équipe passionnée et une envie : faire découvrir l’authenticité de notre cuisine.
+Au fil du temps, notre carte s’est enrichie de recettes locales revisitées avec créativité.
+Les ingrédients frais et locaux sont au cœur de notre engagement pour une cuisine saine et savoureuse.
+KaayNoss est aujourd’hui un lieu de rencontre, de culture et de saveurs.
+Nous y accueillons chaque client comme un invité d’honneur.
+Et chaque assiette servie est une invitation au voyage au cœur du Sénégal.
+            </p>
+            <p>
+                Nous croyons fermement que la gastronomie est un art qui rassemble les gens...
+            </p>
+
+            <h2 class="titre-text"><span>Nos</span> valeurs</h2>
+            <p>
+                Chez KaayNoss, nous mettons la qualité, l’authenticité et la convivialité au centre de tout.
+Chaque plat est préparé avec soin, en respectant les recettes traditionnelles sénégalaises.
+Nous croyons en une cuisine qui rassemble, crée des souvenirs et respecte nos racines.
+L’écoute, la générosité et le respect guident notre service au quotidien.
+Notre mission : offrir bien plus qu’un repas, une véritable expérience humaine.
+
+
+            </p>
+            <p>
+                L'accueil chaleureux et le respect de nos clients sont des piliers de notre philosophie
+            </p>
+
+            <h2 class="titre-text"><span>Notre</span> équipe</h2>
+            <p>
+                Chez KaayNoss, notre équipe est composée de professionnels passionnés par la gastronomie sénégalaise.
+            </p>
+
+            <h2 class="titre-text"><span>Saveurs du Sénégal</span></h2>
+            <p>
+                Les saveurs sénégalaises de KaayNoss racontent une histoire, celle d’un peuple chaleureux et généreux.
+Du thieboudienne au yassa, chaque recette est un hommage aux traditions culinaires du pays.
+Nos plats allient épices, textures et couleurs pour éveiller tous les sens.
+Nous utilisons des ingrédients frais, locaux et respectueux des recettes authentiques.
+Chez KaayNoss, chaque bouchée est un voyage au cœur du Sénégal.
+            </p>
+            <p>
+                Chez KaayNoss, la musique douce du mbalax, les couleurs chaudes et l’esprit de partage vous plongent dans l’ambiance sénégalaise authentique.<br>
+                Nous croyons en une cuisine qui rassemble, crée des souvenirs et respecte nos racines.<br>
+                L’écoute, la générosité et le respect guident notre service au quotidien.<br>
+                Notre mission : offrir bien plus qu’un repas, une véritable experiencia humaine.
+            </p>
+
+            <h2 class="titre-text"><span>Une</span> expérience personnalisée</h2>
+            <p>
+                Nous croyons que chaque client est unique...
+            </p>
+
+            <h2 class="titre-text"><span>Notre</span> engagement envers la communauté</h2>
+            <p>
+                KaayNoss est fier de soutenir les producteurs locaux et de promouvoir la gastronomie sénégalaise.
+Nous croyons en une cuisine qui rassemble, crée des souvenirs et respecte nos racines.
+L’écoute, la générosité et le respect guident notre service au quotidien.
+Notre mission : offrir bien plus qu’un repas, une véritable experiencia humaine.
+
+            </p>
+
+            <h2 class="titre-text"><span>Rejoignez</span>-nous</h2>
+            <p>
+                Chez KaayNoss, nous vous ouvrons nos portes avec passion et fierté.
+Rejoignez-nous pour découvrir une expérience culinaire authentique et conviviale.
+Que ce soit pour un dîner en famille, un rendez-vous romantique ou une fête spéciale, nous sommes là pour vous accueillir.
+Notre équipe est à votre écoute pour répondre à toutes vos envies.
+Vivez la Teranga sénégalaise comme si vous étiez à la maison.
+            </p>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-block">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><i class="fas fa-utensils"></i> Réservation de table</li>
+                    <li><i class="fas fa-motorcycle"></i> Livraison à domicile</li>
+                    <li><i class="fas fa-calendar-alt"></i> Organisation d'événements</li>
+                    <li><i class="fas fa-concierge-bell"></i> Menu personnalisé</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Restons en contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:contact@resto.com" style="color:inherit;text-decoration:none;">contact@resto.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+33123456789" style="color:inherit;text-decoration:none;">+33 1 23 45 67 89</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Adresse : Almadies, Dakar, Sénégal</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Les horaires</h3>
+                <ul>
+                    <li><i class="fas fa-clock"></i> Lundi - Vendredi : 12h - 22h</li>
+                    <li><i class="fas fa-clock"></i> Samedi : 12h - 23h</li>
+                    <li><i class="fas fa-clock"></i> Dimanche : 12h - 21h</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Nos réseaux</h3>
+                <ul class="social-icons" style="display:flex; flex-direction:column; gap:12px; align-items:center; padding-top:10px;">
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-facebook fa-lg"></i> Facebook</a></li>
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-instagram fa-lg"></i> Instagram</a></li>
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-snapchat fa-lg"></i> Snapchat</a></li>
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-whatsapp fa-lg"></i> WhatsApp</a></li>
+                    <li><a href="#" style="color:#fff;"><i class="fab fa-tiktok fa-lg"></i> TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy" style="background-color: #FFA673; color: #000; text-align: center; padding: 10px 0; margin-top: 20px; width: 100%;">
+            <p style="margin:0; font-family: 'Roboto', sans-serif;">
+                &copy; 2025 KaayNoss. Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script src="{% static 'siteweb/main.js' %}"></script>
+</body>
+</html>

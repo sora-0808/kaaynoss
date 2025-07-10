@@ -1,0 +1,46 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inscription réussie</title>
+  <link rel="stylesheet" href="{% static 'siteweb/style.css' %}">
+  <style>
+    body {
+      background-color: #f2f2f2;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+    .message-box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h1 {
+      color: #FFA673;
+    }
+    .btn {
+      margin-top: 20px;
+      background-color: #FFA673;
+      color: white;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="message-box">
+    <h1>Inscription réussie !</h1>
+    <p>Merci de vous être inscrit sur KaayNoss. Bienvenue dans notre communauté !</p>
+    <a href="{% url 'accueil' %}" class="btn">Retour à l'accueil</a>
+  </div>
+</body>
+</html>

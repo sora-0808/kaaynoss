@@ -1,0 +1,110 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - KaayNoss</title>
+
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="{% static 'siteweb/style.css' %}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body style="background-color: #fff;">
+    <header class="contact-header">
+        <div class="logo1" style="display: flex; align-items: center; gap: 4px;">
+            <a href="{% url 'accueil' %}"><div class="k">KN</div></a>
+            <a href="{% url 'accueil' %}" class="logo"><span>Kaay</span>Noss</a>
+        </div>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <ul class="navbar" id="navbar">
+            <li><a href="{% url 'accueil' %}">Accueil</a></li>
+            <li><a href="{% url 'menu' %}">Menu</a></li>
+            <li><a href="{% url 'chefs' %}">Nos chefs</a></li>
+            <li><a href="{% url 'avis' %}">Avis</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><a href="{% url 'apropos' %}">À propos</a></li>
+            <li><a href="{% url 'login' %}" class="btn-connect">Inscription</a></li>
+        </ul>
+    </header>
+
+    <section class="contact" id="contact">
+        <div class="titre noir">
+            <h2 class="titre-text"><span class="noir">Contactez-nous</span></h2>
+        </div>
+        <div class="contactform styled-form decorated-form">
+            <h3>Envoyez-nous un message</h3>
+            <form method="post">
+                {% csrf_token %}
+                <div class="inputboite styled-input decorated-input">
+                    <input type="text" placeholder="Votre Prénom" name="prenom" required>
+                </div>
+                <div class="bol styled-input decorated-input">
+                    <input type="text" placeholder="Votre Nom" name="nom" required>
+                </div>
+                <div class="phone styled-input decorated-input">
+                    <input type="tel" placeholder="Votre numéro de téléphone" name="telephone" required>
+                </div>
+                <div class="tip styled-textarea decorated-textarea">
+                    <textarea placeholder="Votre message" name="message" required></textarea>
+                </div>
+                <div class="send styled-submit decorated-submit">
+                    <input type="submit" value="Envoyer">
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-block">
+                <h3>Nos services</h3>
+                <ul>
+                    <li><i class="fas fa-utensils"></i> Réservation de table</li>
+                    <li><i class="fas fa-motorcycle"></i> Livraison à domicile</li>
+                    <li><i class="fas fa-calendar-alt"></i> Organisation d'événements</li>
+                    <li><i class="fas fa-concierge-bell"></i> Menu personnalisé</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Restons en contact</h3>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:contact@resto.com" style="color:inherit;text-decoration:none;">contact@resto.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+33123456789" style="color:inherit;text-decoration:none;">+33 1 23 45 67 89</a></li>
+                    <li><i class="fas fa-map-marker-alt"></i> Adresse : Almadies, Dakar, Sénégal</li>
+                </ul>
+            </div>
+            <div class="footer-block">
+                <h3>Les horaires</h3>
+                <p><i class="fas fa-clock"></i> Lundi - Vendredi : 12h - 22h</p>
+                <p><i class="fas fa-clock"></i> Samedi : 12h - 23h</p>
+                <p><i class="fas fa-clock"></i> Dimanche : 12h - 21h</p>
+            </div>
+            <div class="footer-block">
+                <h3>Nos réseaux</h3>
+                <ul class="social-icons" style="display:flex; flex-direction:column; gap:12px; align-items:center; padding-top:10px;">
+                    <li><a href="#" title="Facebook" style="color:#fff;"><i class="fab fa-facebook fa-lg"></i> Facebook</a></li>
+                    <li><a href="#" title="Instagram" style="color:#fff;"><i class="fab fa-instagram fa-lg"></i> Instagram</a></li>
+                    <li><a href="#" title="Snapchat" style="color:#fff;"><i class="fab fa-snapchat fa-lg"></i> Snapchat</a></li>
+                    <li><a href="#" title="WhatsApp" style="color:#fff;"><i class="fab fa-whatsapp fa-lg"></i> WhatsApp</a></li>
+                    <li><a href="#" title="TikTok" style="color:#fff;"><i class="fab fa-tiktok fa-lg"></i> TikTok</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="copy">
+            <p style="color: #000; font-family: 'Roboto', sans-serif;">
+                Copyright 2025 Tous droits réservés.
+            </p>
+        </div>
+    </footer>
+
+    <script src="{% static 'siteweb/main.js' %}"></script>
+</body>
+</html>
+

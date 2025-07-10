@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Accueil - KaayNoss{% endblock %}
+
+{% block header %}
+<header>
+    <div class="logo1" style="display: flex; align-items: center; gap: 10px;">
+        <a href="{% url 'accueil' %}"><div class="k">KN</div></a>
+        <a href="{% url 'accueil' %}" class="logo"><span>Kaay</span>Noss</a>
+    </div>
+    <div class="hamburger" id="hamburger">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <ul class="navbar" id="navbar">
+        <li><a href="{% url 'accueil' %}">Accueil</a></li>
+        <li> <a href="{% url 'menu' %}">Menu</a></li>
+        <li><a href="{% url 'chefs' %}">Nos chefs</a></li>
+        <li><a href="{% url 'avis' %}">Avis</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'apropos' %}">À propos</a></li>
+        <li><a href="{% url 'login' %}" class="btn-connect">Inscription</a></li>
+    </ul>
+</header>
+{% endblock %}
+
+{% block content %}
+<section class="banniere" id="banniere">
+    <div class="contenu">
+        <h4 class="titre-text">
+            Bienvenue sur KaayNoss, la référence de la cuisine sénégalaise moderne !
+        </h4>
+        <p>Découvrez des saveurs uniques et des plats préparés avec passion par nos chefs renommés.</p>
+        <a href="{% url 'menu' %}" class="btn1">Découvrir notre menu</a>
+        <a href="{% url 'reservation' %}" class="btn2">Réserver une table</a>
+    </div>
+</section>
+{% endblock %}
+
+

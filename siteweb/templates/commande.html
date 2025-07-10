@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commande Réussie</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f7f7f7;
+    }
+    .container {
+      width: 80%;
+      margin: 40px auto;
+      text-align: center;
+    }
+    .titre {
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+    }
+    .message {
+      font-size: 24px;
+      color: #666;
+    }
+    .bouton {
+      background-color: #333;
+      color: #FFA673;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .bouton:hover {
+      background-color: #444;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 class="titre">Commande Réussie !</h1>
+    <p class="message">Merci pour votre commande ! Nous vous remercions pour votre confiance.</p>
+    <a href="{% url 'accueil' %}">
+      <button class="bouton">Retour à l'accueil</button>
+    </a>
+  </div>
+</body>
+</html>
+
