@@ -7,7 +7,7 @@
   <title>{% block title %}KaayNoss{% endblock %}</title>
 
   <!-- ✅ Feuille de style principale -->
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'siteweb/css/style.css' %}">
 
   <!-- ✅ Font Awesome -->
   <link
@@ -18,12 +18,13 @@
   >
 
   <!-- ✅ Favicon -->
-  <link rel="icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'siteweb/images/favicon.ico' %}" type="image/x-icon">
+
+  {% block extra_css %}{% endblock %}
 </head>
 <body>
   
   {% block header %}
-    <!-- Peut être remplacé par un include -->
     {% include 'partials/header.html' %}
   {% endblock %}
 
@@ -31,8 +32,10 @@
     {% block content %}{% endblock %}
   </main>
 
-  <!-- ✅ JavaScript -->
-  <script src="{% static 'js/main.js' %}"></script>
+  <!-- ✅ JavaScript principal -->
+  <script src="{% static 'siteweb/js/main.js' %}"></script>
+  {% block extra_js %}{% endblock %}
 
 </body>
 </html>
+
