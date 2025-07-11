@@ -1,36 +1,29 @@
-from pathlib import Path
 import os
+from pathlib import Path
 
 # === BASE DIR ===
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# === TEMPLATES & STATIC FILES ===
-TEMPLATES_DIR = BASE_DIR / 'siteweb' / 'templates'
-STATICFILES_DIRS = [BASE_DIR / 'siteweb' / 'static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'
-
-
 # === SÉCURITÉ ===
 SECRET_KEY = 'django-insecure--t$jy%!r$)&hzl!5i5r-2d2146hl$o$we0z51b3970j!@-lty9'
-DEBUG = False  # 🔒 IMPORTANT pour la production
-
+DEBUG = False
 ALLOWED_HOSTS = ['kaaynoss01.onrender.com', 'localhost', '127.0.0.1']
- # ✅ Remplace par ton nom d’utilisateur
 
-# === APPLICATIONS INSTALLÉES ===
+# === APPLICATIONS INSTALLEES ===
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',  # nécessaire pour les statics
     'siteweb',
 ]
 
 # === MIDDLEWARE ===
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',  # ← AJOUTÉ pour servir les statics en prod
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -39,10 +32,8 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-# === ROUTAGE ===
-ROOT_URLCONF = 'kaaynoss_project.urls'
-
 # === TEMPLATES ===
+TEMPLATES_DIR = BASE_DIR / 'siteweb' / 'templates'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -59,22 +50,22 @@ TEMPLATES = [
     },
 ]
 
-# === WSGI ===
+ROOT_URLCONF = 'kaaynoss_project.urls'
 WSGI_APPLICATION = 'kaaynoss_project.wsgi.application'
 
-# === BASE DE DONNÉES ===
+# === BASES DE DONNEES ===
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'soramalick',            # 🔁 Remplace par le nom de ta base sur PythonAnywhere
-        'USER': 'soramalick',        # 🔁 Remplace par ton nom utilisateur PythonAnywhere
-        'PASSWORD': 'Senegal2022',       # 🔁 Mot de passe MySQL
+        'NAME': 'kaaynoss2_db',
+        'USER': 'root',
+        'PASSWORD': 'Senegal2022',
         'HOST': '127.0.0.1',
         'PORT': '3306',
     }
 }
 
-# === VALIDATEURS DE MOT DE PASSE ===
+# === MOTS DE PASSE ===
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
     {'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator'},
@@ -82,7 +73,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
-# === LOCALISATION ===
+# === INTERNATIONALISATION ===
 LANGUAGE_CODE = 'fr-fr'
 TIME_ZONE = 'UTC'
 USE_I18N = True
@@ -90,8 +81,14 @@ USE_TZ = True
 
 # === FICHIERS STATIQUES ===
 STATIC_URL = '/static/'
-STATICFILES_DIRS = STATICFILES_DIRS
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = [
+    BASE_DIR / 'siteweb' / 'static',  # ton dossier local de CSS/JS/images
+]
+STATIC_ROOT = BASE_DIR / 'staticfiles'  # emplacement où collectstatic va copier
 
-# === ID AUTO PAR DÉFAUT ===
+# En production, Active le stockage compressé et cacheable de WhiteNoise
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+# === DEFAULT AUTO FIELD ===
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+

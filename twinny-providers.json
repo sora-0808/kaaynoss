@@ -1,0 +1,36 @@
+{
+  "22139a20-aaf6-4875-821a-94bb904fcdf9": {
+    "apiHostname": "localhost",
+    "apiPath": "/v1",
+    "apiPort": 11434,
+    "apiProtocol": "http",
+    "id": "22139a20-aaf6-4875-821a-94bb904fcdf9",
+    "label": "Ollama",
+    "modelName": "codellama:7b-instruct",
+    "provider": "ollama",
+    "type": "chat"
+  },
+  "df551f67-0cf8-40f7-af0e-3e9128586518": {
+    "apiHostname": "0.0.0.0",
+    "apiPath": "/api/generate",
+    "apiPort": 11434,
+    "apiProtocol": "http",
+    "fimTemplate": "codellama",
+    "label": "Ollama FIM",
+    "id": "df551f67-0cf8-40f7-af0e-3e9128586518",
+    "modelName": "codellama:7b-code",
+    "provider": "ollama",
+    "type": "fim"
+  },
+  "9b387b6a-9e48-4e1a-a53e-173a6256f8ab": {
+    "apiHostname": "0.0.0.0",
+    "apiPath": "/api/embed",
+    "apiPort": 11434,
+    "apiProtocol": "http",
+    "id": "9b387b6a-9e48-4e1a-a53e-173a6256f8ab",
+    "label": "Ollama Embedding",
+    "modelName": "all-minilm:latest",
+    "provider": "ollama",
+    "type": "embedding"
+  }
+}
